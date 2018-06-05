@@ -1,5 +1,18 @@
 # python-pytest-lab
 
+## Test structure
+
+```python
+# GIVEN a db with 3 tasks
+# WHEN another task is added
+tasks.add(Task('Another task'))
+
+#THEN the count increases by 1
+assert tasks.count() == 4
+
+```
+
+## Running tests
 - In order to run a single test we console: `pytest test_calc.py::test_add`;
 - Verbose mode: `pytest test_calc.py -v`;
 - Pytest runs tests with the following naming structure:
@@ -25,3 +38,9 @@
 [pytest]
 xfail_strict=true
 ```
+
+### Fixtures
+
+Fixtures are functions that run before our tests (or after). Which in pytest context we can assume that it allows the separation of 'getting ready for' and 'cleaning up after'
+
+To see how fixtures are setup and teared down we use the following command: `--setup-show`;

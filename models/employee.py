@@ -4,7 +4,8 @@ class Employee:
 
     raise_amb = 1.05
 
-    def __init__(self, username, lastname, pay):
+    def __init__(self, _id, username, lastname, pay):
+        self.id = _id
         self.username = username
         self.lastname =lastname
         self.pay = pay
