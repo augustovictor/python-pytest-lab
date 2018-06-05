@@ -1,6 +1,6 @@
 import pytest
 import time
-import calc
+from utils import calc
 
 @pytest.mark.basic_operation
 def test_add():
