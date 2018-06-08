@@ -33,6 +33,7 @@ assert tasks.count() == 4
         - `-k _raises and not delete` not to run `test_delete_raises()`;
 - `--collect-only` shows what tests will run under given arguments;
 - We can set tests marked as `xfail` that passed as failed tests by setting a pytest.ini file with the following:
+- To see how test are setup we can use the following paramete: `--setup-show`
 
 ```
 [pytest]
