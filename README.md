@@ -34,6 +34,7 @@ assert tasks.count() == 4
 - `--collect-only` shows what tests will run under given arguments;
 - We can set tests marked as `xfail` that passed as failed tests by setting a pytest.ini file with the following:
 - To see how test are setup we can use the following parameter: `--setup-show`
+- To see where fixtures are defined we run our tests with the parameter `--fixtures`
 
 ```
 [pytest]
