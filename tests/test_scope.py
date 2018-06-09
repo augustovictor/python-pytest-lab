@@ -36,7 +36,7 @@ def test_2(sess_scope, mod_scope, func_scope):
 class TestFixtures():
     def test_3(self):
         """Test using a class scope fixture"""
-        print(class_scope)
+        # print(class_scope) # We do not have access to the returned value of class_scope since we're using usefixtures statement
 
     def test_4(self):
         """Again, multiple tests are more fun"""
