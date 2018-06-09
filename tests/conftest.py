@@ -45,3 +45,10 @@ def db_employees():
 
     items = [Employee(*row) for row in rows]
     return items
+
+@pytest.fixture(scope='session')
+def setup_db():
+    """Setup db"""
+    yield
+
+    """Teardown db"""
