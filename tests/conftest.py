@@ -1,5 +1,6 @@
 import pytest
 import sqlite3
+import json
 from models import Employee
 
 @pytest.fixture
@@ -52,3 +53,19 @@ def setup_db():
     yield
 
     """Teardown db"""
+
+@pytest.fixture(scope='session')
+def author_file_json(tmpdir_factory):
+    python_author_data = {
+        'Author1': { 'city': 'Boston' },
+        'Author2': { 'city': 'Portland' },
+        'Author3': { 'city': 'Sao Paulo' }        
+    }
+
+    file = tmpdir_factory.mktemp('data').join('author_file.json')
+    print('file: {}'.format(str(file)))
+
+    with file.open('w') as f:
+        json.dump(python_author_data, f)
+    
+    return file
