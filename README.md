@@ -10,7 +10,7 @@ tasks.add(Task('Another task'))
 #THEN the count increases by 1
 assert tasks.count() == 4
 
-```
+``` 
 
 ## Running tests
 - In order to run a single test we console: `pytest test_calc.py::test_add`;
@@ -35,7 +35,6 @@ assert tasks.count() == 4
 - We can set tests marked as `xfail` that passed as failed tests by setting a pytest.ini file with the following:
 - To see how test are setup we can use the following parameter: `--setup-show`
 - To see where fixtures are defined we run our tests with the parameter `--fixtures`
-
 ```
 [pytest]
 xfail_strict=true
@@ -46,3 +45,7 @@ xfail_strict=true
 Fixtures are functions that run before our tests (or after). Which in pytest context we can assume that it allows the separation of 'getting ready for' and 'cleaning up after'
 
 To see how fixtures are setup and teared down we use the following command: `--setup-show`;
+
+### Dependencies
+
+In order to install a dependency and add to `requirements.txt` file we run in the command line: `pip install <dependency> && pip freeze > requirements.txt`
