@@ -32,13 +32,15 @@ assert tasks.count() == 4
     - Where functions match given name: `-k _raises`
         - `-k _raises and not delete` not to run `test_delete_raises()`;
 - `--collect-only` shows what tests will run under given arguments;
-- We can set tests marked as `xfail` that passed as failed tests by setting a pytest.ini file with the following:
-- To see how test are setup we can use the following parameter: `--setup-show`
-- To see where fixtures are defined we run our tests with the parameter `--fixtures`
-```
+- We can set tests marked as `xfail` that passed as failed tests by setting a pytest.ini file with the `following:
+```python
 [pytest]
 xfail_strict=true
 ```
+- To see how test are setup we can use the following parameter: `--setup-show`
+- To see where fixtures are defined we run our tests with the parameter `--fixtures`;
+- `--cache-show` shows what's in cache;
+- `--cache-clear` to clear the cache with info like 'last failed';
 
 ### Fixtures
 
@@ -55,3 +57,7 @@ We can pass arguments to pytest by the command line when running our tests throu
 ### Dependencies
 
 In order to install a dependency and add to `requirements.txt` file we run in the command line: `pip install <dependency> && pip freeze > requirements.txt`
+
+### Cache
+
+We can also pass the result of one test session to another by the use of the built in cache `fixture`.
