@@ -61,3 +61,7 @@ In order to install a dependency and add to `requirements.txt` file we run in th
 ### Cache
 
 We can also pass the result of one test session to another by the use of the built in cache `fixture`.
+
+### Capsys
+
+Allows us to retrieve stdout and stderr from some code, and disables output capture temporarily.
