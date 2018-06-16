@@ -46,6 +46,12 @@ Fixtures are functions that run before our tests (or after). Which in pytest con
 
 To see how fixtures are setup and teared down we use the following command: `--setup-show`;
 
+`pytestconfig` is a shortcut to `request.config`, and sometimes referred as 'pytest config object'.
+
+### Pytest options
+
+We can pass arguments to pytest by the command line when running our tests through `def pytest_addoption(parser)`
+
 ### Dependencies
 
 In order to install a dependency and add to `requirements.txt` file we run in the command line: `pip install <dependency> && pip freeze > requirements.txt`

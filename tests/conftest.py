@@ -69,3 +69,7 @@ def author_file_json(tmpdir_factory):
         json.dump(python_author_data, f)
     
     return file
+
+def pytest_addoption(parser):
+    parser.addoption('--myopt', action='store_true', help='Some boolean option')
+    parser.addoption('--foo', action='store', default='bar', help='foo: bar or baz')
