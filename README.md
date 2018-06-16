@@ -41,6 +41,7 @@ xfail_strict=true
 - To see where fixtures are defined we run our tests with the parameter `--fixtures`;
 - `--cache-show` shows what's in cache;
 - `--cache-clear` to clear the cache with info like 'last failed';
+- `doctest-modules` to run docstring tests
 
 ### Fixtures
 
@@ -65,3 +66,25 @@ We can also pass the result of one test session to another by the use of the bui
 ### Capsys
 
 Allows us to retrieve stdout and stderr from some code, and disables output capture temporarily.
+
+### Monkeypatch
+
+It is a dynamic modification of a class or module during runtime.
+
+Functions provided by the built in fixture mokeypatch:
+- `setatr(target, name, value=<notset>, raising=True)`: Set an attribute;
+- `delattr(target, name=<notset>, raising=True)`: Delete an attribute;
+- `setitem(dic, name, value)`: Set a dictionary entry;
+- `delitem(dic, name, raising=True)`: Delete a dictionary entry;
+- `setenv(name, value, prepend=None)`: Set an env variable;
+- `delenv(name, value, raising=True`: Delete an env variable;
+- `sysapth_prepend(path)`: Prepend path to `sys.path`, which is Python's list of import locations;
+- `chdir(path)`: Change current working directory;
+
+The `raising` parameter tells pytest whether or not to raise an exception if the item does not already exist.
+
+The `prepend` parameter to `setenv` can be a character. If it is set, the value of the env variable will be changed to value + prepend + old value.
+
+### doctest_namespace
+
+Allows us to put code examples inside docstrings and test them.

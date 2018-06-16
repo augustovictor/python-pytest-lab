@@ -2,6 +2,7 @@ import pytest
 import sqlite3
 import json
 from models import Employee
+from models import unnecessary_math
 
 @pytest.fixture
 def ultimate_data():
@@ -73,3 +74,7 @@ def author_file_json(tmpdir_factory):
 def pytest_addoption(parser):
     parser.addoption('--myopt', action='store_true', help='Some boolean option')
     parser.addoption('--foo', action='store', default='bar', help='foo: bar or baz')
+
+@pytest.fixture(autouse=True)
+def add_um(doctest_namespace):
+    doctest_namespace['um'] = unnecessary_math
