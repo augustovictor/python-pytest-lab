@@ -10,7 +10,7 @@ def test_author_1_from_boston(author_file_json):
 def test_all_have_city_attribute(author_file_json):
     with author_file_json.open() as f:
         authors = json.load(f)
-
+        # raise EnvironmentError('Something wrong happened')
         for a in authors:
             print(authors[a])
             assert len(authors[a]['city']) > 0

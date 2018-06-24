@@ -109,3 +109,16 @@ We can change how pytest discovers what to test by adding some configs to `pytes
 - Classes: `python_classes = *Test Test* *Suite`
 - Methods: `python_functions = test_* check_*`
 
+## Tests debugging
+
+Use the arguments: `--pdb`
+
+Commands in debugging session:
+- `p`: prints the value of exp;
+- `pp`: pretty prints the value of exp;
+- `l`: List the point of failure and five lines of code above and below;
+- `l 2,4`: List specific line numbers;
+- `a`: Prints the arguments of current function with values;
+- `u`: Moves up one level in stack trace;
+- `d`: Moves down one level in stack trace;
+- `q`: Quits debuggin session;
