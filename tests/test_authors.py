@@ -1,6 +1,7 @@
 import pytest
 import json
 
+@pytest.mark.smoke
 def test_author_1_from_boston(author_file_json):
     with author_file_json.open() as f:
         authors = json.load(f)
