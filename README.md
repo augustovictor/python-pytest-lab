@@ -122,3 +122,11 @@ Commands in debugging session:
 - `u`: Moves up one level in stack trace;
 - `d`: Moves down one level in stack trace;
 - `q`: Quits debuggin session;
+
+## Code coverage
+
+Install `pytest-cov` to get test coverage;
+
+Enter the folder with the tests for the part of the code you want to test then run the tests command for the folder we want to run the tests against. `pytest --cov=models`.
+
+To generate a html report run `--cov=models --cov-report=html`
