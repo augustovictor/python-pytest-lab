@@ -4,5 +4,6 @@ class RemoteOp:
     def __init__(self):
         pass
 
-    def get_remote_data(self, url):
-        return requests.get(url)
+    def fetch_data(self):
+        print('CALLED ACTUAL METHOD')
+        return requests.get('https://jsonplaceholder.typicode.com/posts/1')

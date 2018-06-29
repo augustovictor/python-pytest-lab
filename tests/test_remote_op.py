@@ -1,10 +1,10 @@
 import pytest
-from services import RemoteOp
+from services.RemoteOp import RemoteOp
 
+def stub_fetch_data():
+    return { 'id': 1 } 
 
 def test_get_remote_op(mocker):
-    RemoteOp = RemoteOp
-    mocker.patch.object(RemoteOp, 'remote_op')
-    RemoteOp.remote_op.get_remote_data.return_value = 10
-    data = RemoteOp.RemoteOp().get_remote_data('test')
-    assert data['id'] == 10
+    mocker.patch.object(RemoteOp, 'fetch_data', return_value=stub_fetch_data())
+    data = RemoteOp().fetch_data()
+    assert data['id'] == 1
